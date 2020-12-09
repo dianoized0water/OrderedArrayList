@@ -4,6 +4,4 @@ NoNullArrayList Class
 - no instance variables
 - constructors
 	super();
-	the initial capacity you should also initialize in another constructor
- 
-
+	you can also create a NoNullArrayList with a designated capacity
