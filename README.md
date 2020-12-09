@@ -7,4 +7,4 @@ NoNullArrayList Class
 	you can also create a NoNullArrayList with a designated capacity
 - add(T thing) is boolean
 - add(int index, T thing) is void
-- set(int index, T thing) is E (an object?)
+- set(int index, T thing) is T 

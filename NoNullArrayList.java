@@ -9,12 +9,8 @@ public class NoNullArrayList<T> extends ArrayList<T>{
     super(InitialCapacity);
   }
 
-  private boolean isNull(T added){
-    return added==null;
-  }
-
   public boolean add(T thing){
-    if (isNull(thing)){
+    if (null==thing){
       throw new IllegalArgumentException();
     }
     else {
@@ -24,11 +20,18 @@ public class NoNullArrayList<T> extends ArrayList<T>{
   }
 
   public void add(int index, T thing){
-    if (isNull(thing)){
+    if (null==thing){
       throw new IllegalArgumentException();
     }
     else {
       super.add(index, thing);
     }
+  }
+
+  public T set(int index, T thing){
+    if (null==thing){
+      throw new IllegalArgumentException();
+    }
+    return super.set(index, thing);
   }
 }
