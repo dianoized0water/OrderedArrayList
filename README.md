@@ -12,4 +12,5 @@ NoNullArrayList Class
 OrderedArrayList
 - also no instance variables
 - add and set would function differently.
-	throw angry error messages if it's not ordered. 
+	throw angry error messages if it's not ordered.
+- would we need to check whether the add values are valid for the second add method?
