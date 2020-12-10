@@ -1,6 +1,6 @@
 # OrderedArrayList
 
-NoNullArrayList Class
+##NoNullArrayList Class
 - no instance variables
 - constructors
 	super();
@@ -9,7 +9,7 @@ NoNullArrayList Class
 - add(int index, T thing) is void
 - set(int index, T thing) is T
 
-OrderedArrayList
+##OrderedArrayList
 - also no instance variables
 - add and set would function differently.
 	throw angry error messages if it's not ordered.
