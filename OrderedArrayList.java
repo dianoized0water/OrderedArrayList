@@ -23,9 +23,6 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
   }
 
   public boolean add(T thing){
-    if (thing==null){
-      throw new IllegalArgumentException();
-    }
     super.add(where(thing), thing);
     return true;
   }
