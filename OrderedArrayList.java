@@ -11,36 +11,35 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
 
   private int where(T thing){
     int a = 0;
-    for (int i=0; i<this.size(); i++){
-      if (thing.compareTo(this.get(i))<=0){
-        return a;
-      }
-      else{
+    while (a < this.size()){
+      if (thing.compareTo(this.get(a))>0){
         a++;
+      }
+      else {
+        return a;
       }
     }
     return a;
   }
 
   public boolean add(T thing){
+    if (thing == null){
+      throw new IllegalArgumentException();
+    }
     super.add(where(thing), thing);
     return true;
   }
 
   public void add(int index, T thing){
-    if (thing.compareTo(this.get(index-1))>=0 && thing.compareTo(this.get(index))<=0){
-      super.add(index, thing);
-    }
-    else{
-      throw new IllegalArgumentException();
-    }
+      add(thing);
   }
 
   public T set(int index, T thing){
-    if(!(thing.compareTo(this.get(index-1))>=0 && thing.compareTo(this.get(index+1))<=0)){
+    if (thing == null){
       throw new IllegalArgumentException();
     }
-    super.add(index, thing);
-    return super.remove(index+1);
+    T removed = super.remove(index);
+    super.add(where(thing), thing);
+    return removed;
   }
 }
